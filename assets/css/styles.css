@@ -370,10 +370,14 @@ body.light-theme {
 }
 
 .home__img {
-  width: 190px; /* Make the image take up the full width of the container */
-  height: 293px; /* Make the image take up the full height of the container */
+  width: 190px; /* Make the image take up the full width of the container *//* Make the image take up the full height of the container */
   object-fit: cover; 
-  
+  max-width: 100%;
+  height: auto;
+  display: block;
+  position: relative;
+  z-index: 3;
+  height: auto;
 }
 
 .home__handle {
@@ -390,6 +394,8 @@ body.light-theme {
   align-items: flex-end;
   justify-content: center;
   overflow: hidden;
+  position: relative;
+  z-index: 2;
 }
 
 
