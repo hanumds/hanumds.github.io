@@ -312,11 +312,33 @@ body.light-theme {
 }
 
 /*=============== HOME ===============*/
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2rem 1rem;
+  min-height: 100vh;
+}
+
 .home__container {
   position: relative;
+  display: grid;             /* pastikan menggunakan grid layout */
   row-gap: 4.5rem;
   padding-top: 2rem;
-  
+  grid-template-columns: 1fr; /* default 1 kolom agar pas di mobile */
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Untuk layar besar (tablet ke atas) */
+@media screen and (min-width: 768px) {
+  .home__container {
+    grid-template-columns: repeat(2, 1fr); /* 2 kolom jika butuh */
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
 
 .home__data {
@@ -356,21 +378,20 @@ body.light-theme {
 
 .home__handle {
   justify-self: center;
-  width: 19px;
-  height: 20px;
   background: linear-gradient(
     180deg,
     hsla(var(--first-hue), var(--sat), var(--lig), 0.5),
     hsla(var(--first-hue), var(--sat), var(--lig), 0.1)
   );
-
   border-radius: 10rem 10rem 1rem 1rem;
-  width: 900px;
+  width: 100%;        /* ubah dari 900px */
+  max-width: 300px;   /* batasi lebarnya */
   display: flex;
   align-items: flex-end;
   justify-content: center;
   overflow: hidden;
 }
+
 
 .home__button {
   display: flex;
